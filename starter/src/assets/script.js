@@ -1,5 +1,5 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-/* Create 3 or more product objects using object literal notation 
+/* Create 3 or more product objects using object literal notation
    Each product should include five properties
    - name: name of product (string)
    - price: price of product (number)
@@ -13,23 +13,23 @@ const products = [
     price: 1,
     quantity: 0,
     productId: 100,
-    image: "images/cherry.jpg",
+    image: "images/cherry.jpg"
   },
   {
     name: "Orange",
     price: 3,
     quantity: 0,
     productId: 101,
-    image: "images/orange.jpg",
+    image: "images/orange.jpg"
   },
   {
     name: "Strawberry",
     price: 2,
     quantity: 0,
     productId: 102,
-    image: "images/strawberry.jpg",
-  },
-];
+    image: "images/strawberry.jpg"
+  }
+]
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
    - orange.jpg by Mae Mu
@@ -43,7 +43,7 @@ let cart = [];
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
-function addProductToCart(productId) {
+function addProductToCart (productId) {
   const productsQuantityIndex = products.findIndex((product) => product.productId === productId);
   const newProduct = products.find((product) => product.productId === productId);
   if (!cart.find((product) => product.productId === productId) || cart.length === 0) {
@@ -116,9 +116,9 @@ function emptyCart() {
 let balance = 0;
 
 function pay(amount) {
-  let sum = amount - cartTotal();
+  const sum = amount - cartTotal();
   if (balance < 0) {
-    let newBalance = balance + amount;
+    const newBalance = balance + amount;
     balance = newBalance;
     return newBalance;
   }
@@ -126,9 +126,9 @@ function pay(amount) {
   return sum;
 }
 
-/* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
+/* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.) */
 
-/* The following is for running unit tests. 
+/* The following is for running unit tests.
    To fully complete this project, it is expected that all tests pass.
    Run the following command in terminal to run tests
    npm run test
@@ -143,7 +143,7 @@ module.exports = {
   removeProductFromCart,
   cartTotal,
   pay,
-  emptyCart,
+  emptyCart
   /* Uncomment the following line if completing the currency converter bonus */
   // currency
 };
